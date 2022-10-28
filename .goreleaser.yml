@@ -1,4 +1,4 @@
-project_name: example-goreleaser-systemd
+project_name: example-goreleaser-service
 
 builds:
   - env:
@@ -23,7 +23,7 @@ brews:
       owner: pthomison
       name: homebrew-tools
     service: |
-      run: opt_bin/"example-goreleaser-systemd"
+      run opt_bin/"example-goreleaser-service"
       
 nfpms:
   - 
