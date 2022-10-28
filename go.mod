@@ -1,3 +1,3 @@
-module github.com/pthomison/example-goreleaser-systemd-service
+module github.com/pthomison/example-goreleaser-systemd
 
 go 1.19
