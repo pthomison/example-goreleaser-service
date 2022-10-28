@@ -28,6 +28,9 @@ brews:
       error_log_path var/"log/example-goreleaser-service-stderr.log"
       working_dir var/"lib/example-goreleaser-service"
 
+    post_install: |
+      (var/"lib/example-goreleaser-service").mkpath
+
 nfpms:
   - 
     maintainer: pthomison@tbd.com
