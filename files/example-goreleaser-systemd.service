@@ -2,7 +2,6 @@
 
 [Unit]
 Description=Example systemd service
-Documentation=nil
 After=network.target
 
 [Service]
