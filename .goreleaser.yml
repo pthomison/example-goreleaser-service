@@ -18,6 +18,9 @@ checksum:
 snapshot:
   name_template: "{{ .Tag }}-next"
 
+furies:
+- account: pthomison
+
 brews:
   - tap:
       owner: pthomison
