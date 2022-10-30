@@ -1,0 +1,13 @@
+# Ripped from nginx service file
+
+[Unit]
+Description=Example systemd service
+Documentation=nil
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/example-goreleaser-service
+
+[Install]
+WantedBy=multi-user.target

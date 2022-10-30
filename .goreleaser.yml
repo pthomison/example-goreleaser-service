@@ -39,6 +39,11 @@ nfpms:
       - deb
       - rpm
       
+
+    contents:
+      - src: files/example-goreleaser-systemd.service
+        dst: /lib/systemd/system/example-goreleaser-systemd.service
+
 changelog:
   sort: asc
   filters:
