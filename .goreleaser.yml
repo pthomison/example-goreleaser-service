@@ -22,14 +22,19 @@ brews:
   - tap:
       owner: pthomison
       name: homebrew-tools
-    service: |
-      run opt_bin/"example-goreleaser-service"
-      log_path var/"log/example-goreleaser-service-stdout.log"
-      error_log_path var/"log/example-goreleaser-service-stderr.log"
-      working_dir var/"lib/example-goreleaser-service"
 
-    post_install: |
-      (var/"lib/example-goreleaser-service").mkpath
+    install: |
+      bin.install "example-goreleaser-service"
+      prefix.install_symlink "files/example-goreleaser-service.service" => "#{service_name}.service"
+
+    # service: |
+    #   run opt_bin/"example-goreleaser-service"
+    #   log_path var/"log/example-goreleaser-service-stdout.log"
+    #   error_log_path var/"log/example-goreleaser-service-stderr.log"
+    #   working_dir var/"lib/example-goreleaser-service"
+
+    # post_install: |
+    #   (var/"lib/example-goreleaser-service").mkpath
 
 nfpms:
   - 
@@ -41,8 +46,8 @@ nfpms:
       
 
     contents:
-      - src: files/example-goreleaser-systemd.service
-        dst: /etc/systemd/system/example-goreleaser-systemd.service
+      - src: files/example-goreleaser-service.service
+        dst: /etc/systemd/system/example-goreleaser-service.service
 
 changelog:
   sort: asc
